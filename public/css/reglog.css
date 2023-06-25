@@ -76,6 +76,16 @@
     text-decoration: none;
     color:antiquewhite;
 }
+.ret{
+    min-height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.ret > span{
+    color: rgb(241, 198, 198);
+}
 .message-danger{
     width: 100%;
     padding: 0.5rem;

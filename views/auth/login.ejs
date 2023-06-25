@@ -1,0 +1,26 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reglog.css">
+<title>Login</title>
+<div class="fback" style="height: 100vh;">
+    <form action="/admin/login" method="post" id="login" class="form">
+        <!-- <h1>Admin Login</h1> -->
+        <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email">
+        </div>
+        <div class="form-field">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" name="password" id="password">
+        </div>
+        <div class="ret">
+            <input type="checkbox" name="retailer" id="retailer">
+            <label for="retailer">Login as retailer</label>
+            <span>(* if you are a consumer then don't check this.)</span>
+        </div>
+        <button class="btn">Login</button>
+    </form>
+    <div class="user-check">
+        <p>Don't have an account? <a href="/register"> Click here</a> to register</p>
+    </div>
+</div>
+<script src="/js/reglog.js"></script>

@@ -2,6 +2,7 @@ const express = require('express')
 const ejsMate = require('ejs-mate')
 const path = require('path')
 const productRoutes = require('./routes/productRoutes')
+const authRoutes = require('./routes/authRoutes')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const app = express()
@@ -19,6 +20,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 
 app.use('/products', productRoutes)
+app.use(authRoutes)
 
 app.get('/', (req,res)=>{
     res.send('goto <a href="/products"> products </a>')
