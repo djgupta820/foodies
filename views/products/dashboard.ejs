@@ -1,0 +1,101 @@
+<% layout('layout/boilerPlate') -%>
+    <section>
+        <div class="slider">
+            <div id="img">
+                <h3 id="stext"></h3>
+            </div>
+        </div>
+    </section>
+    <section class="mb-4">
+        <div class="container-fluid">
+            <% if(items.length> 0) {%>
+                <h3 class="mt-4 mx-2">Briyani</h3>
+                <div class="items">
+                    <% for(let item of items) {%>
+                        <% if(item.category==='Briyani' || item.category==='briyani' ) {%>
+                            <div class="card m-2">
+                                <img class="card-img-top" src="<%= item.image %>" alt="Briyani-Image"
+                                    style="max-height: 10rem; min-height: 10rem;">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="color: green;">
+                                        <%= item.name %>
+                                    </h6>
+                                    <h6 style="color: red;"> &#8377; <%= item.price %>
+                                    </h6>
+                                    <p class="card-text" style="max-height: 2rem; overflow: hidden;">
+                                        <%= item.description %>
+                                    </p>
+                                    <div style="display: flex; align-items: center; justify-content: space-around;">
+                                        <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
+                                        <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <a href="#"><i class="fa-solid fa-cart-plus"
+                                                style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } }%>
+                </div>
+
+                <h3 class="mt-4 mx-2">Pizza</h3>
+                <div class="items">
+                    <% for(let item of items) {%>
+                        <% if(item.category==='Pizza' || item.category==='pizza' ) {%>
+                            <div class="card m-2">
+                                <img class="card-img-top" src="<%= item.image %>" alt="Pizza-Image"
+                                    style="max-height: 10rem; min-height: 10rem;">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="color: green;">
+                                        <%= item.name %>
+                                    </h6>
+                                    <h6 style="color: red;">&#8377; <%= item.price %>
+                                    </h6>
+                                    <p class="card-text" style="max-height: 2rem; overflow: hidden;">
+                                        <%= item.description %>
+                                    </p>
+                                    <div style="display: flex; align-items: center; justify-content: space-around;">
+                                        <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
+                                        <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <a href="#"><i class="fa-solid fa-cart-plus"
+                                                style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } }%>
+                </div>
+
+                <h3 class="mt-4 mx-2">Burger</h3>
+                <div class="items">
+                    <% for(let item of items) {%>
+                        <% if(item.category==='Burger' || item.category==='burger' ) {%>
+                            <div class="card m-2">
+                                <img class="card-img-top" src="<%= item.image %>" alt="Burger-Image"
+                                    style="max-height: 10rem; min-height: 10rem;">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="color: green;">
+                                        <%= item.name %>
+                                    </h6>
+                                    <h6 style="color: red;">&#8377; <%= item.price %>
+                                    </h6>
+                                    <p class="card-text" style="max-height: 2rem; overflow: hidden;">
+                                        <%= item.description %>
+                                    </p>
+                                    <div style="display: flex; align-items: center; justify-content: space-around;">
+                                        <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
+                                        <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <a href="#"><i class="fa-solid fa-cart-plus"
+                                                style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } }%>
+                </div>
+                <% }else{ %>
+                    <div class="alert alert-danger mt-4">
+                        <h4>No item to show :(</h4>
+                    </div>
+                    <% } %>
+
+        </div>
+    </section>
+
+    <script src="/js/slider.js"></script>

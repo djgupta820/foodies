@@ -1,0 +1,51 @@
+<% layout('layout/boilerPlate') %>
+<section class="container">
+    <div class="view">
+        <div class="card mt-2" style="width: 22rem; box-shadow: 1px 1px 10px 1px gray;">
+            <img class="card-img-top" src="<%= item.image %>" alt="Item Image" style="max-height: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title"> <%= item.name %> </h5>
+                <p class="text-muted"> <%= item.category %> </p>
+                <h6 style="color: red;"> &#8377; <%= item.price %></h6>
+                <p class="card-text"> <%= item.description %> </p>
+                <div style="display: flex; align-items: center; justify-content: space-around;">
+                    <a href="/user/<%= item._id %>/order" class="btn btn-warning mx-1 px-4"> order </a>
+                    <a href="#"><i class="fa-solid fa-cart-plus" style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="reviews mx-5 p-1 my-2">
+            <h5>Add A Review</h5>
+            <form action="/products/<%= item._id %>/add-review" method="post" style="width: 95%;">
+                <div class="mb-3">
+                    <label for="rating" class="form-label text-muted">Rating</label>
+                    <input type="range" name="rating" id="rating" class="form-control" min="0" max="5" step="1">
+                </div>
+                <div class="mb-3">
+                    <label for="rating" class="form-label text-muted">Comment</label>
+                    <textarea class="form-control" name="comment" id="commment" rows="3" style="resize: none;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-sm btn-success">Add a review </button>
+            </form>
+            <% if(item.reviews.length > 0) {%>
+                <% for(let review of item.reviews) {%>
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h6 style="color: green;"><%= review.user %></h6>
+                            <h6 class="card-title"> 
+                                <% for(let i=0; i<review.rating; i++) {%>
+                                    <i class="fa-sharp fa-solid fa-star" style="color: gold;"></i>
+                                <% } %>
+                            </h6>
+                            <p class="card-text"><%= review.comment%></p>
+                        </div>
+                    </div>
+                <% } %>
+            <% }else{ %>
+                <div class="alert alert-danger mt-4">
+                    <h6>No reviews yet on this item</h6>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>

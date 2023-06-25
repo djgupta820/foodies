@@ -1,0 +1,121 @@
+:root{
+    --nav-color: rgb(31, 155, 31);
+    --nav-text: #fff;
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--nav-text);
+    background-color: var(--nav-color);
+    
+}
+.navbar{
+    width: 60%;
+    padding: 0.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+}
+.logo{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: monospace;
+}
+#openMenu, #closeMenu, #check{
+    font-size: 1.7em;
+    cursor: pointer;
+    display: none;
+}
+.navbar a{
+    text-decoration: none;
+    color: var(--nav-text);
+}
+.navbar i{
+    font-size: 1.5rem;
+}
+.icons{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search{
+    max-width: 400px;
+    min-width: 200px;
+    height: 20vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--nav-color);
+    z-index: 10;
+}
+
+.search input{
+    width: 90%;
+    padding: 0.3em;
+    outline: none;
+}
+.search button{
+    padding: 0.3em;
+    background-color: var(--nav-color);
+    color: white;
+    border: 0.1em solid white;
+    border-left: none;
+    font-weight:900
+}
+.search button:hover{
+    transition: 200ms;
+    background-color: white;
+    color: var(--nav-color);
+}
+#sclose{
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+@media all and (width < 700px){
+    #openMenu, #closeMenu{
+        display: block;
+    }
+    #openMenu{
+        position: absolute;
+        right: 1rem;
+    }
+    #closeMenu{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+    .navbar{
+        width: 60%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -60%;
+        bottom: 0;
+        z-index: 10;
+        transition: right 200ms linear;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    #check:checked ~ .navbar{
+        right: 0;
+    }
+}

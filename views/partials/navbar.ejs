@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/navbar.css">
+<header>
+    <div class="logo">Foodies</div>
+    <input type="checkbox" name="check" id="check">
+    <nav class="navbar">
+        <label for="check" id="closeMenu"> <i class="fa fa-times"></i> </label>
+        <a href="/products" class="link">Products</a>
+        <a href="/products/new" class="link">New</a>
+        <a href="#" class="link">MyOrders</a>
+        <div class="icons">
+            <label id="srch" style="cursor: pointer;"><i class="fa fa-search"></i></label>
+            <a href="#"> <i class="fa fa-cart-shopping"></i> </a>
+        </div>
+    </nav>
+    <form action="/user/search" method="post" class="search" id="search">
+        <label id="sclose"> <i class="fa fa-times"></i> </label>
+        <input type="search" name="q" id="q"> 
+        <button><i class="fa fa-search"></i></button>
+    </form>
+    <label for="check" id="openMenu"> <i class="fa fa-bars"></i> </label>
+</header>
+
+<script>
+    const search = document.querySelector('#search')
+    const sclose = document.querySelector('#sclose')
+    const srch = document.querySelector('#srch')
+    srch.addEventListener('click', ()=>{
+        search.style.display = 'flex'
+    })
+    sclose.addEventListener('click', ()=>{
+        search.style.display = 'none'
+    })
+</script>

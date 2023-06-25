@@ -1,0 +1,25 @@
+<% layout('layout/boilerPlate') %>
+
+    <section class="container">
+        <h1>Update <%= item.name %></h1>
+        <form action="/products/<%= item._id %>/edit?_method=PATCH" method="post" style="border: 0.1em solid lightgray; padding: 1rem; border-radius: 8px;">
+            <div class="form-group my-2">
+                <label for="name">Item Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Briyani" style="text-transform: capitalize;" value="<%= item.name %>">
+            </div>
+            <div class="form-group my-2">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" name="category" id="category" style="text-transform: capitalize;" value="<%= item.category %>">
+            </div>
+            <div class="form-group my-2">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" id="price" value="<%= item.price %>">
+            </div>
+            <input type="hidden" name="image" value="<%= item.image %>">
+            <div class="form-group my-2">
+                <label for="description">Description</label>
+                <textarea class="form-control" name="description" rows="4" id="description" style="resize: none;"><%= item.description %></textarea>
+            </div>
+            <button class="m-3 px-5 btn btn-outline-info"> Update </button>
+        </form>
+    </section>
