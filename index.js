@@ -45,7 +45,7 @@ app.use(flash())
 app.use((req,res,next)=>{
     res.locals.error = req.flash('error')
     res.locals.success = req.flash('success')
-    res.locals.newUser = req.user
+    res.locals.User = req.user
     next()
 })
 

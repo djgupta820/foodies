@@ -1,6 +1,7 @@
 const express = require('express')
 const multer = require('multer')
 const Food = require('../models/Food')
+const {isLoggedIn} = require('../middlewares')
 const router = express.Router()
 
 // showing products/dashboard page
@@ -17,7 +18,7 @@ router.get('/:itemId/view', async (req,res)=>{
 })
 
 // rendering add new product page
-router.get('/new', (req,res)=>{
+router.get('/new', isLoggedIn, (req,res)=>{
     res.render('products/new')
 })
 
@@ -43,7 +44,7 @@ router.post('/new', upload.single('image'), async (req,res)=>{
 })
 
 // viewing edit product page
-router.get('/:itemId/edit', async (req,res)=>{
+router.get('/:itemId/edit', isLoggedIn, async (req,res)=>{
     const {itemId} = req.params
     const item = await Food.findById(itemId)
     res.render('products/edit', {item})
