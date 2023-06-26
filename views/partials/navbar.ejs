@@ -11,11 +11,11 @@
             <a href="#" class="link">MyOrders</a>
             <a href="#"><%= User.username %></a>
             <a href="/logout">Logout</a>
-            <a href="#"> <i class="fa fa-cart-shopping"></i> </a>
-            
+            <a href="/products/user/cart"> <i class="fa fa-cart-shopping"></i> </a>
         <% }else{ %>
             <a href="/login" class="link">Login</a>
             <a href="/register" class="link">Register</a>
+            <a href="/products/user/cart"> <i class="fa fa-cart-shopping"></i> </a>
         <% } %>
         <div class="icons">
             <label id="srch" style="cursor: pointer;"><i class="fa fa-search"></i></label>

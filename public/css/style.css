@@ -36,12 +36,6 @@
     position: sticky;
     top: 0;
 }
-.results{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
 .message-danger{
     width: 100%;
     text-align: center;
@@ -75,6 +69,78 @@
     font-family: monospace;
     font-size: 4em;
 }
+.cart{
+    width: 100%;
+    display: flex;
+}
+.cart-items{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.4rem;
+    border: 0.1em solid lightgray;
+    margin-right: 1rem;
+}
+.cart-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    background-color: rgb(236, 235, 235);
+}
+.cart-item:hover{
+    transition: 200ms;
+    box-shadow: 2px 2px 10px 2px darkgray;
+}
+.item-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    border: 1px solid green;
+}
+.item-img img{
+    width: 100%;
+    height: 100%;
+}
+.item-info{
+    text-align: center;
+}
+.item-info > form > button{
+    font-size: 1rem;
+    color: red;
+}
+.summary{
+    width: 30%;
+    height: fit-content;
+    max-height: 70vh;
+    position: sticky;
+    top: 10px;
+    border: 0.1em solid lightgray;
+    background-color: rgb(235, 230, 230);
+    padding: 0.5rem;
+    box-shadow: 2px 2px 10px 2px darkgray;
+}
+.summary > h2{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+.cbtn{
+    width: 98%;
+    padding: 4px 2px;
+    border: none;
+    background-color: black;
+    color: rgb(196, 192, 192);
+    box-shadow: 2px 2px 10px 2px gray;
+}
+.cbtn:hover{
+    transition: 200ms;
+    color: #fff;
+    box-shadow: 2px 2px 10px 2px black;
+}
 @media all and (width < 800px){
     .view{
         justify-content: center;
@@ -90,6 +156,18 @@
     }
     .slider{
         height: 65vh;
+    }
+}
+@media all and (width < 950px){
+    .cart{
+        flex-direction: column;
+    }
+    .cart-items{
+        width: 100%;
+    }
+    .summary{
+        margin-top: 1rem;
+        width: 100%;
     }
 }
 @media all and (width < 489px){

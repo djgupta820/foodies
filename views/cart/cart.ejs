@@ -1,0 +1,55 @@
+<% layout('layout/boilerPlate') %>
+
+<section class="container-fluid">
+    <h1 style="text-align: center; color: green;">Your Cart</h1>
+    <div class="cart mb-3">
+        <div class="cart-items">
+            <h1>Items</h1>
+            <% if(cart.length > 0) {%>
+                <% for(let item of cart) {%>
+                    <div class="cart-item m-1 py-4">
+                        <div class="item-img">
+                            <img src="<%= item.img %>" alt="item-image">
+                        </div>
+                        <div class="item-info">
+                            <p>Name</p>
+                            <h4 style="color: green;"> <%= item.name %> </h4>
+                        </div>
+                        <div class="item-info">
+                            <p>Price</p>
+                            <h5 style="color: green;"> &#8377; <%= item.price %> </h5>
+                        </div>
+                        <div class="item-info">
+                            <p>Quantity</p>
+                            <h5 style="color: green;"> <%= item.count %> </h5>
+                        </div>
+                        <!-- removing item form cart -->
+                        <div class="item-info">
+                            <form action="/products/<%= item._id %>/remove" method="post">
+                                <button class="btn"> <i class="fa fa-times"></i> </button>
+                            </form>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <div class="alert alert-danger" style="width: 100%;">
+                    <p>Your cart is empty :(</p>
+                </div>
+            <% } %>            
+        </div>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <hr>
+            <h5>Total Items: <%= cart.length %></h5>
+            <h5>Total Amount: &#8377; <%= totalAmount %> </h5>
+
+            <hr>
+            <p style="color: red;">Amount to be paid</p>
+            <h5> &#8377; <%= totalAmount %> </h5>
+            <form action="#" method="get" class="mt-4">
+                <button class="cbtn">CheckOut</button>
+            </form>
+        </div>
+    </div>
+</section>

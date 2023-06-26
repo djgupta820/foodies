@@ -4,6 +4,7 @@ const path = require('path')
 const productRoutes = require('./routes/productRoutes')
 const authRoutes = require('./routes/authRoutes')
 const reviewRoutes = require('./routes/reviewRoutes')
+const cartRoutes = require('./routes/cartRoutes')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const passport = require('passport')
@@ -23,7 +24,7 @@ const sessionConfig = {
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expire: Date.now() + 7 * 24 * 60 * 60 * 1000
+        expire: 7 * 24 * 60 * 60 * 1000
     }
 }
 
@@ -52,6 +53,7 @@ app.use((req,res,next)=>{
 app.use('/products', productRoutes)
 app.use(authRoutes)
 app.use(reviewRoutes)
+app.use(cartRoutes)
 
 app.get('/', (req, res) => {
     res.send('goto <a href="/products"> products </a>')
