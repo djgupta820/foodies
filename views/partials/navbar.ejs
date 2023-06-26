@@ -4,14 +4,11 @@
     <input type="checkbox" name="check" id="check">
     <nav class="navbar">
         <label for="check" id="closeMenu"> <i class="fa fa-times"></i> </label>
-        <a href="/" class="link">Home</a>
         <a href="/products" class="link">Products</a>
         <% if(User) {%>
             <a href="/products/new" class="link">New</a>
-            <a href="#" class="link">MyOrders</a>
-            <a href="#"><%= User.username %></a>
+            <strong><a href="#"><%= User.username %></a></strong>
             <a href="/logout">Logout</a>
-            <a href="/products/user/cart"> <i class="fa fa-cart-shopping"></i> </a>
         <% }else{ %>
             <a href="/login" class="link">Login</a>
             <a href="/register" class="link">Register</a>
@@ -19,6 +16,9 @@
         <% } %>
         <div class="icons">
             <label id="srch" style="cursor: pointer;"><i class="fa fa-search"></i></label>
+            <% if(User) {%>
+                <a href="/products/user/cart"> <i class="fa fa-cart-shopping"></i> </a>
+            <% } %>
         </div>
     </nav>
     <form action="/products/search" method="get" class="search" id="search">

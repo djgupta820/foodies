@@ -35,8 +35,13 @@ header{
     display: none;
 }
 .navbar a{
+    font-size: 1.1rem;
     text-decoration: none;
     color: var(--nav-text);
+}
+.navbar a:hover{
+    transition: 200ms;
+    color: gold;
 }
 .navbar i{
     font-size: 1.5rem;
