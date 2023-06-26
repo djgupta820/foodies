@@ -16,7 +16,7 @@
         </div>
         <div class="reviews mx-5 p-1 my-2">
             <h5>Add A Review</h5>
-            <form action="/products/<%= item._id %>/add-review" method="post" style="width: 95%;">
+            <form action="/products/<%= item._id %>/review" method="post" style="width: 95%;">
                 <div class="mb-3">
                     <label for="rating" class="form-label text-muted">Rating</label>
                     <input type="range" name="rating" id="rating" class="form-control" min="0" max="5" step="1">

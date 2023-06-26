@@ -27,6 +27,15 @@
 .reviews .card{
     width: 100%;
 }
+.reviews > h5{
+    width: 100%;
+    background-color: green;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
 .message-danger{
     width: 100%;
     text-align: center;

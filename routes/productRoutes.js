@@ -12,7 +12,7 @@ router.get('/', async (req,res)=>{
 // viewing a product
 router.get('/:itemId/view', async (req,res)=>{
     const {itemId} = req.params
-    const item = await Food.findById(itemId)
+    const item = await Food.findById(itemId).populate('reviews')
     res.render('products/view', {item})
 })
 
