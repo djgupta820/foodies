@@ -56,7 +56,7 @@ app.use(reviewRoutes)
 app.use(cartRoutes)
 
 app.get('/', (req, res) => {
-    res.send('goto <a href="/products"> products </a>')
+    res.render('index')
 })
 
 app.listen(port, () => console.log('foodies running on http://localhost:5000'))
