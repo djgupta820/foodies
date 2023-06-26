@@ -34,10 +34,10 @@ async function getCurrentLocation() {
 if (login) {
     login.addEventListener('submit', (e) => {
         e.preventDefault()
-        const email = login['email'].value
+        const username = login['username'].value
         const password = login['password'].value
-        if (email === '') {
-            createMessage("Please input email!", login, 'danger')
+        if (username === '') {
+            createMessage("Please input username!", login, 'danger')
         }
         else if (password === '') {
             createMessage("Please input password!", login, 'danger')

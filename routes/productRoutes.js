@@ -38,6 +38,7 @@ router.post('/new', upload.single('image'), async (req,res)=>{
     const {name, category, price, description} = req.body
     const image = '/uploads/' + req.file.filename
     await Food.create({name, category, price, image, description})
+    req.flash('success', `${name} added successfully`)
     res.redirect('/products')
 })
 
@@ -53,6 +54,7 @@ router.patch('/:itemId/edit', async (req,res)=>{
     const {itemId} = req.params
     const {name, category, price, image, description} = req.body
     await Food.findByIdAndUpdate(itemId, {name, category, price, image, description})
+    req.flash('success', `${name} updated successfully`)
     res.redirect(`/products/${itemId}/view`)
 })
 

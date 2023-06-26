@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/css/reglog.css">
 <title>Register</title>
 
-<div class="fback" style="min-height: 100vh;">
-    <form action="/admin/register" method="post" id="register" class="form">
+<div class="fback" style="min-height: 100vh; height: fit-content;">
+    <form action="/register" method="post" id="register" class="form">
         <!-- <h1>Admin Register</h1> -->
         <div class="form-field">
             <label for="name" class="form-label">Full Name</label>
@@ -27,13 +27,13 @@
         </div>
         <div class="ret">
             <input type="checkbox" name="retailer" id="retailer">
-            <label for="retailer" class="form-label">Register as retailer</label>
+            <label for="retailer">Register as retailer</label>
             <span>(* if you are a consumer then don't check this.)</span>
         </div>
         <button class="btn">Register</button>
     </form>
     <div class="user-check">
-        <p>Don't have an account? <a href="/login"> Click here</a> to login</p>
+        <p>Already have an account? <a href="/login"> Click here</a> to login</p>
     </div>
 </div>
 
