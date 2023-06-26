@@ -36,6 +36,12 @@
     position: sticky;
     top: 0;
 }
+.results{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
 .message-danger{
     width: 100%;
     text-align: center;

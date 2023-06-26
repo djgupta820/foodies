@@ -1,0 +1,35 @@
+<% layout('layout/boilerPlate') -%>
+
+<section class="container">
+    <h3 class="my-3">showing results for <span style="color: green; text-transform: capitalize;"><%= q %></span></h3>
+    <% if(items.length > 0){ %>
+        <div class="items">
+            <% for(let item of items) {%>
+                <div class="card m-2">
+                    <img class="card-img-top" src="<%= item.image %>" alt="Briyani-Image"
+                        style="max-height: 10rem; min-height: 10rem;">
+                    <div class="card-body">
+                        <h6 class="card-title" style="color: green;">
+                            <%= item.name %>
+                        </h6>
+                        <h6 style="color: red;"> &#8377; <%= item.price %>
+                        </h6>
+                        <p class="card-text" style="max-height: 2rem; overflow: hidden;">
+                            <%= item.description %>
+                        </p>
+                        <div style="display: flex; align-items: center; justify-content: space-around;">
+                            <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
+                            <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                            <a href="#"><i class="fa-solid fa-cart-plus"
+                                    style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% }else{ %>
+        <div class="alert alert-danger">
+            Nothing to show for <span style="color: red; font-weight: bold;"><%= q %></span> :(
+        </div>
+    <% } %>
+</section>

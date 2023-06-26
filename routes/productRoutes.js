@@ -59,4 +59,12 @@ router.patch('/:itemId/edit', async (req,res)=>{
     res.redirect(`/products/${itemId}/view`)
 })
 
+// searching for product
+router.get('/search', async (req,res)=>{
+    const {q} = req.query
+    // regex to search items
+    const items = await Food.find({name: {$regex: `(?i)${q}(?-i)`}})
+    res.render('products/results', {q, items})
+})
+
 module.exports = router
