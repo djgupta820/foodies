@@ -8,9 +8,9 @@ router.get('/register', (req,res)=>{
 })
 
 router.post('/register', async (req,res)=>{
-    const {name, email, username, phone, password} = req.body
+    const {name, email, username, phone, password, retailer} = req.body
     // creating the user
-    const user = new User({name, email, username, phone})
+    const user = new User({name, email, username, phone, retailer})
     // regestering the user
     const newUser = await User.register(user, password)
     req.flash('success', 'user registered successfully')

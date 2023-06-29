@@ -55,6 +55,14 @@ if(loc){
 }
 
 if (register) {
+    const ret = document.querySelector('#retailer')
+    ret.addEventListener('change', (e)=>{
+        if(ret.checked){
+            e.target.value = 'true'
+        }else{
+            e.target.value = 'false'
+        }
+    })
     register.addEventListener('submit', (e) => {
         e.preventDefault()
         const pattern = /[^0-9]/
@@ -63,28 +71,37 @@ if (register) {
         const phone = register['phone'].value
         const address = register['address']
         const password = register['password'].value
-        // console.log(password)
-        if (password.length < 8 || password.length > 15) {
-            createMessage("Password length must be between 8 and 15!", register, 'danger')
-        }
-        else if (name.length <= 3) {
+        const username = register['username'].value
+
+        if (name.length <= 3) {
             createMessage("Name must have more than 3 characters!", register, 'danger')
+            return false
         }
         else if (email.length <= 0) {
             createMessage("Please input your email!", register, 'danger')
+            return false
+        }
+        else if(username.length <= 0){
+            createMessage("Please input username!", register, 'danger')
+            return false
         }
         else if (phone.match(pattern)) {
             createMessage("Phone number cannot contain alphabetical characters!", register, 'danger')
+            return false
         }
         else if (phone.length < 10 || phone.length > 10) {
             createMessage("Phone number must be 10 digits long!", register, 'danger')
+            return false
         }
-        else if(address){
-            if (address.value.length <= 0) {
-                createMessage("Please input your address!", register, 'danger')
-            }
+        else if (password.length < 8 || password.length > 15) {
+            createMessage("Password length must be between 8 and 15!", register, 'danger')
+            return false
         }
         else {
+            // if(address && address.value.length <= 0){
+            //     createMessage("Please input your address!", register, 'danger')
+            //     return false
+            // }
             register.submit()
         }
     })

@@ -27,7 +27,9 @@
                                     </p>
                                     <div style="display: flex; align-items: center; justify-content: space-around;">
                                         <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
-                                        <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <% if(User && User.retailer) {%>
+                                            <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <% } %>
                                         <form action="/products/<%= item._id %>/cart" method="post">
                                             <button class="btn btn-sm"><i class="fa-solid fa-cart-plus" style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></butt>
                                         </form>
@@ -55,7 +57,9 @@
                                     </p>
                                     <div style="display: flex; align-items: center; justify-content: space-around;">
                                         <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
-                                        <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <% if(User && User.retailer) {%>
+                                            <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <% } %>
                                         <form action="/products/<%= item._id %>/cart" method="post">
                                             <button class="btn btn-sm"><i class="fa-solid fa-cart-plus" style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></butt>
                                         </form>
@@ -83,7 +87,9 @@
                                     </p>
                                     <div style="display: flex; align-items: center; justify-content: space-around;">
                                         <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
-                                        <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <% if(User && User.retailer) {%>
+                                            <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
+                                        <% } %>
                                         <form action="/products/<%= item._id %>/cart" method="post">
                                             <button class="btn btn-sm"><i class="fa-solid fa-cart-plus" style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></butt>
                                         </form>
