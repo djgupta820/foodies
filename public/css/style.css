@@ -141,6 +141,53 @@
     color: #fff;
     box-shadow: 2px 2px 10px 2px black;
 }
+.checkout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.checkout form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 1px solid red;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin: 1.5em 0.5em;
+}
+.form-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 0.5em;
+}
+.field input{
+    width: 100%;
+}
+.form-field input{
+    width: 100%;
+    border: none;
+    border-bottom: 0.1em solid lightgray;
+    padding: 0.2em 0;
+    outline: none;
+}
+.form-field input:focus{
+    transition: 200ms;
+    border-bottom: 0.1em solid green;
+}
+.form-field label{
+    margin-bottom: 0.5em;
+    color: green;
+}
 @media all and (width < 800px){
     .view{
         justify-content: center;
@@ -182,5 +229,8 @@
     }
     .slider #img{
         box-shadow: inset 0 0 10px 10px white;
+    }
+    .field input[type="month"]{
+        width: 70%;
     }
 }

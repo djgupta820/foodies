@@ -56,4 +56,16 @@ router.post('/products/:productId/remove', isLoggedIn, async (req,res)=>{
     req.flash('success', 'item removed')
     res.redirect('/products/user/cart')
 })
+
+router.get('/products/user/cart/checkout', isLoggedIn, (req,res)=>{
+    const cart = req.user.cart
+    const totalAmount = cart.reduce((sum, item)=> sum + item.price * item.count, 0)
+    const items = cart.length
+    res.render('cart/checkout', {totalAmount, items})
+})
+
+router.post('/products/user/cart/checkout', isLoggedIn, (req,res)=>{
+    req.flash('success', 'order placed successfully')
+    res.redirect('/products/user/cart/checkout')
+})
 module.exports = router

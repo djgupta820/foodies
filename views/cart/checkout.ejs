@@ -1,0 +1,44 @@
+<%- layout('layout/boilerPlate') %>
+<link rel="stylesheet" href="/css/style.css">
+
+<section class="container">
+    <div class="checkout mb-2">
+        <div class="summary mt-3" style="width: 100%;">
+            <h3>Summary</h3>
+            <hr>
+            <h5>Total Items: <span style="color: red;"><%= items %></span> </h5>
+            <h5>Amount Payable: &#x20B9; <span style="color: red;"><%= totalAmount %></span> </h5>
+        </div>
+        <form action="" method="post">
+            <h4>Payment Information</h4>
+            <div class="form-field">
+                <label for="name">Holder Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-field">
+                <label for="card">Card Number</label>
+                <input type="text" name="card" id="card" pattern="[0-9]{12}" required>
+            </div>
+            <div class="form-field">
+                <label for="cardtype">Card Type</label>
+                <select name="cardtype" id="cardtype" required>
+                    <option value="select">Select</option>
+                    <option value="visa">Visa</option>
+                    <option value="rupay">Rupay</option>
+                    <option value="master">Master</option>
+                </select>
+            </div>
+            <div class="form-field" style="flex-direction: row;">
+                <div class="field">
+                    <label for="expiry">Expiry</label>
+                    <input type="month" name="expiry" id="expiry" value="2023-06" required>
+                </div>
+                <div class="field">
+                    <label for="cvv">CVV</label>
+                    <input type="number" name="cvv" id="cvv" required>
+                </div>
+            </div>
+            <button class="cbtn"> Order </button>
+        </form>
+    </div>
+</section>
