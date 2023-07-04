@@ -34,6 +34,7 @@
             <li> View All Products </li>
             <li> View Particular Product </li>
             <li> Search </li>
+            <li> View Profile </li>
             <p></p>
         </ul>
     </li>
