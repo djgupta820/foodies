@@ -1,6 +1,8 @@
 # Foodies
 A simple food ordering web application where one can be registered as reatiler to sell his/her own product or can be registered as consumer where he/she can order.
 
+<center> <img src="readme.png" alt="home-screen"> <center>
+
 ## Technologies Used: 
 <ul> 
     <li> 
