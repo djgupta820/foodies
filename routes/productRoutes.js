@@ -67,4 +67,12 @@ router.get('/search', async (req,res)=>{
     res.render('products/results', {q, items})
 })
 
+// Deleting item
+router.delete('/:productId', async (req,res)=>{
+    const {productId} = req.params
+    await Food.findByIdAndDelete(productId)
+    req.flash('success', 'item deleted successfully')
+    res.redirect('/products')
+})
+
 module.exports = router

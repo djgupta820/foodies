@@ -9,7 +9,11 @@
                 <h6 style="color: red;"> &#8377; <%= item.price %></h6>
                 <p class="card-text"> <%= item.description %> </p>
                 <div style="display: flex; align-items: center; justify-content: space-around;">
-                    <!-- <a href="/user/<%= item._id %>/order" class="btn btn-warning mx-1 px-4"> order </a> -->
+                    <% if(User && User.retailer) {%>
+                        <form action="/products/<%= item._id %>?_method=DELETE" method="post">
+                            <button class="btn btn-danger mx-1 px-4"> Delete </button>
+                        </form>
+                    <% } %>
                     <form action="/products/<%= item._id %>/cart" method="post">
                         <button class="btn"><i class="fa-solid fa-cart-plus" style="color: rgb(10, 99, 10); font-size: 1.8rem;"></i></button>
                     </form>
