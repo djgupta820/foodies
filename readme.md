@@ -12,6 +12,7 @@
             <li> CSS </li>
             <li> JavaScript </li>
             <li> BootStrap </li>
+            <p></p>
         </ul>
     </li>
     <li> 
@@ -20,6 +21,7 @@
             <li> NodeJS </li>
             <li> ExpressJS </li>
             <li> Database: MongoDB </li>
+            <p></p>
         </ul>
     </li>
 </ul>
@@ -32,6 +34,7 @@
             <li> View All Products </li>
             <li> View Particular Product </li>
             <li> Search </li>
+            <p></p>
         </ul>
     </li>
     <li> 
@@ -43,6 +46,7 @@
             <li> Search </li>
             <li> Order/Make Payment </li>
             <li> Logout </li>
+            <p></p>
         </ul>
     </li>
     <li> 
@@ -51,6 +55,7 @@
             <li> Add New Product </li>
             <li> Edit/Update Product </li>
             <li> Delete Product </li>
+            <p></p>
         </ul>
     </li>
 </ul>
