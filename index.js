@@ -14,7 +14,7 @@ const flash = require('connect-flash')
 const User = require('./models/User')
 const app = express()
 const port = 5000
-const ip = '192.168.0.14' 
+const ip = 'localhost' 
 
 mongoose.connect('mongodb://127.0.0.1:27017/foodies')
     .then(() => console.log('connected to foodies'))

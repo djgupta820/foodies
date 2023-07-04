@@ -38,7 +38,8 @@ const upload = multer({storage})
 router.post('/new', upload.single('image'), async (req,res)=>{
     const {name, category, price, description} = req.body
     const image = '/uploads/' + req.file.filename
-    await Food.create({name, category, price, image, description})
+    const poster = req.user._id
+    await Food.create({name, category, price, image, description, poster})
     req.flash('success', `${name} added successfully`)
     res.redirect('/products')
 })
@@ -75,4 +76,7 @@ router.delete('/:productId', async (req,res)=>{
     res.redirect('/products')
 })
 
+router.get('/test', (req,res)=>{
+    res.send(req.user._id)
+})
 module.exports = router

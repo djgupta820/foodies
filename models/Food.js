@@ -21,6 +21,10 @@ const FoodSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    poster: {
+        type: String,
+        required: true
+    },
     reviews: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review'

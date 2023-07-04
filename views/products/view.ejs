@@ -9,7 +9,7 @@
                 <h6 style="color: red;"> &#8377; <%= item.price %></h6>
                 <p class="card-text"> <%= item.description %> </p>
                 <div style="display: flex; align-items: center; justify-content: space-around;">
-                    <% if(User && User.retailer) {%>
+                    <% if(User && User.retailer && User._id == item.poster) {%>
                         <form action="/products/<%= item._id %>?_method=DELETE" method="post">
                             <button class="btn btn-danger mx-1 px-4"> Delete </button>
                         </form>

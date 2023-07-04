@@ -27,7 +27,7 @@
                                     </p>
                                     <div style="display: flex; align-items: center; justify-content: space-around;">
                                         <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
-                                        <% if(User && User.retailer) {%>
+                                        <% if(User && User.retailer && User._id == item.poster) {%>
                                             <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
                                         <% } %>
                                         <form action="/products/<%= item._id %>/cart" method="post">
@@ -57,7 +57,7 @@
                                     </p>
                                     <div style="display: flex; align-items: center; justify-content: space-around;">
                                         <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
-                                        <% if(User && User.retailer) {%>
+                                        <% if(User && User.retailer && User._id == item.poster) {%>
                                             <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
                                         <% } %>
                                         <form action="/products/<%= item._id %>/cart" method="post">
@@ -87,7 +87,7 @@
                                     </p>
                                     <div style="display: flex; align-items: center; justify-content: space-around;">
                                         <a href="/products/<%= item._id %>/view" class="btn btn-primary">view</a>
-                                        <% if(User && User.retailer) {%>
+                                        <% if(User && User.retailer && User._id == item.poster) {%>
                                             <a href="/products/<%= item._id %>/edit" class="btn btn-warning">edit</a>
                                         <% } %>
                                         <form action="/products/<%= item._id %>/cart" method="post">
