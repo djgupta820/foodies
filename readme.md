@@ -56,10 +56,10 @@ A simple food ordering web application where one can be registered as reatiler t
 </ul>
 
 ## How to run
--> clone this repository to local storage *(git clone https://github.com/djgupta820/foodies.git)*
--> change directory to cloned directory *(cd foodies)*
--> fire the command *nodemon index.js*
--> this project will run on *http://192.168.0.14:5000*
--> if you want to change the address to localhost *change ip variable in index.js file to localhost or 127.0.0.1*
--> ctrl + click on the link displayed on console or go to *192.168.0.14:5000* on browser
--> Done &#128515; 
+-> clone this repository to local storage *(git clone https://github.com/djgupta820/foodies.git)* <br>
+-> change directory to cloned directory *(cd foodies)* <br>
+-> fire the command *nodemon index.js* <br>
+-> this project will run on *http://192.168.0.14:5000* <br>
+-> if you want to change the address to localhost *change ip variable in index.js file to localhost or 127.0.0.1* <br>
+-> ctrl + click on the link displayed on console or go to *192.168.0.14:5000* on browser <br>
+-> Done &#128515; <br>
