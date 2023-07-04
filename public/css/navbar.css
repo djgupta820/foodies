@@ -66,6 +66,7 @@ header{
     justify-content: center;
     background-color: var(--nav-color);
     z-index: 10;
+    border: 0.1em solid gold;
 }
 
 .search input{
@@ -122,5 +123,11 @@ header{
     }
     #check:checked ~ .navbar{
         right: 0;
+    }
+}
+@media all and (width < 600px){
+    .navbar{
+        width: 100%;
+        right: -100%;
     }
 }

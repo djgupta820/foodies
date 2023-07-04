@@ -9,7 +9,7 @@
             <% if(User.retailer) {%>
                 <a href="/products/new" class="link">New</a>
             <% } %>
-            <strong><a href="#"><%= User.username %></a></strong>
+            <strong><a href="/profile"><%= User.username %></a></strong>
             <a href="/logout">Logout</a>
         <% }else{ %>
             <a href="/login" class="link">Login</a>

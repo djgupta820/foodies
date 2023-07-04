@@ -1,0 +1,93 @@
+<% layout('layout/boilerPlate') %>
+
+<section class="container">
+    <h4 class="my-3">Welcome <%= user.username %></h4>
+    <div class="row">
+        <div class="col-5 d-flex justify-content-center align-items-center my-1"">
+            <div class="profile">
+                <img src="/images/user.png" alt="user-profile">
+            </div>
+        </div>
+        <div class="col-7 flex-column my-1">
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Username</p> 
+                <p><%= user.username %></p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Full Name</p> 
+                <p><%= user.name %></p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Email</p> 
+                <p><%= user.email %></p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Phone</p> 
+                <p><%= user.phone %></p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Is Retailer</p> 
+                <p>
+                    <% if(user.retailer) {%>
+                        Yes
+                    <% }else {%>
+                        No
+                    <% } %>
+                </p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Address</p> 
+                <% if(user.address == 'NULL') {%>
+                    <p class="text-danger">No Address Given</p>
+                <% }else{ %>
+                    <p><%= user.address %></p>                    
+                <% } %>
+                </p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <p class="text-muted mx-5">Items in Cart</p> 
+                <p><%= user.cart.length %></p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="text-danger">
+
+    <h4 class="text-success">Items in your cart</h4>
+    <% if(user.cart.length > 0) {%>
+        <% for(let item of user.cart) {%>
+            <div class="d-flex justify-content-around align-items-center my-1">
+                <img class="cimg rounded" src="<%= item.img %>" alt="item-image">
+                <p> <%= item.name %> </p>
+            </div>
+        <% } %>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <a href="/products/user/cart" class="btn btn-primary my-1" style="width: 30%;"> Goto Cart</a>
+        </div>
+    <% }else{ %>
+        <div class="alert alert-danger">
+            Your cart is empty :(
+        </div>
+    <% } %>
+
+    <hr class="text-danger">
+    
+    <% if(user.retailer) {%>
+        <h4 class="text-success">My Products</h4>
+        <% for(let item of products) {%>
+            <div class="d-flex justify-content-around align-items-center my-1 ">
+                <img class="cimg rounded" src="<%= item.image %>" alt="item-image">
+                <div>
+                    <p> <%= item.name %> </p>
+                    <a href="/products/<%= item._id %>/view" class="btn btn-warning"> View </a>
+                </div>
+            </div>
+        <% } %>
+    <% }else {%>
+        <div class="alert alert-danger">
+            you haven't added any product yet :(
+        </div>
+    <% } %>
+
+    <hr class="text-danger">
+</section>

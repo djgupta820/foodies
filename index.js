@@ -5,6 +5,7 @@ const productRoutes = require('./routes/productRoutes')
 const authRoutes = require('./routes/authRoutes')
 const reviewRoutes = require('./routes/reviewRoutes')
 const cartRoutes = require('./routes/cartRoutes')
+const profileRoutes = require('./routes/profileRoutes')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const passport = require('passport')
@@ -14,7 +15,7 @@ const flash = require('connect-flash')
 const User = require('./models/User')
 const app = express()
 const port = 5000
-const ip = 'localhost' 
+const ip = '192.168.0.14' 
 
 mongoose.connect('mongodb://127.0.0.1:27017/foodies')
     .then(() => console.log('connected to foodies'))
@@ -55,6 +56,7 @@ app.use('/products', productRoutes)
 app.use(authRoutes)
 app.use(reviewRoutes)
 app.use(cartRoutes)
+app.use(profileRoutes)
 
 app.get('/', (req, res) => {
     res.render('index')

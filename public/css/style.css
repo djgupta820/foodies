@@ -188,6 +188,22 @@
     margin-bottom: 0.5em;
     color: green;
 }
+.pc{
+    display: flex;
+    flex-direction: column;
+}
+.profile{
+    width: 70%;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+}
+.cimg{
+    width: 50%;
+    max-width: 200px;
+    max-height: 200px;
+}
 @media all and (width < 800px){
     .view{
         justify-content: center;
@@ -216,6 +232,22 @@
         margin-top: 1rem;
         width: 100%;
     }
+}
+@media all and (width < 650px){
+    .pc{
+        align-items: center;
+        justify-content: center;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .col-5, .col-7{
+        width: 100%;
+    }
+    .profile{
+        width: 60%;
+    }
+
 }
 @media all and (width < 489px){
     .items{
