@@ -51,7 +51,7 @@
         </ul>
     </li>
     <li> 
-        <ul> UnAuthenticated User (As Retailer)
+        <ul> Authenticated User (As Retailer)
             <li> All Functions of Authenticated User </li>
             <li> Add New Product </li>
             <li> Edit/Update Product </li>
