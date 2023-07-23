@@ -38,11 +38,18 @@
             <div class="d-flex justify-content-start">
                 <p class="text-muted mx-5">Address</p> 
                 <% if(user.address == 'NULL') {%>
-                    <p class="text-danger">No Address Given</p>
+                    <p class="text-danger">No Address Given</p> <span title="Edit address" id="editBtn" style="color: blue; cursor: pointer; margin-left: 2em;">Edit</span>  
                 <% }else{ %>
-                    <p><%= user.address %></p>                    
+                    <p><%= user.address %></p> <span id="editBtn" style="color: blue; cursor: pointer; margin-left: 2em;">Edit</span>               
                 <% } %>
-                </p>
+            </div>
+            <!-- for adding address -->
+            <div id="addrs" class="mx-5">
+                <form action="/profile/<%= user._id %>/updateAddress" method="post">
+                    <textarea name="address" id="add" cols="30" rows="3" required> <%= user.address %> </textarea>
+                    <span id="loc" style="font-size: 2em; color: green; cursor: pointer;"><i class="fa-solid fa-location-dot mx-2"></i></span>
+                    <button class="btn text-danger"> Update </button>
+                </form>
             </div>
             <div class="d-flex justify-content-start">
                 <p class="text-muted mx-5">Items in Cart</p> 
@@ -91,3 +98,6 @@
 
     <hr class="text-danger">
 </section>
+<!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANrolFRxZ3VrW9CvXD8i2WrSCkP4lslWA&callback=initMap"> -->
+</script>
+<script src="/js/script.js"></script>

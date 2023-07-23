@@ -204,6 +204,19 @@
     max-width: 200px;
     max-height: 200px;
 }
+#addrs{
+    display: none;
+}
+#addrs form{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#addrs textarea{
+    resize: none; 
+    outline: none;
+}
 @media all and (width < 800px){
     .view{
         justify-content: center;

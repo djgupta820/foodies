@@ -10,4 +10,12 @@ router.get('/profile', isLoggedIn, async (req,res)=>{
     res.render('profile/profile', {user, products})
 })
 
+router.post('/profile/:userId/updateAddress', async (req,res)=>{
+    const {userId} = req.params
+    const {address} = req.body
+    await User.findByIdAndUpdate(userId, {address: address})
+    req.flash('success', 'Address updated successfully!')
+    res.redirect('/profile')
+})
+
 module.exports = router
